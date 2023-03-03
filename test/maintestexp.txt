@@ -1,0 +1,1 @@
+the first test is for testing the 3 options are correctly identified using the getopt function
