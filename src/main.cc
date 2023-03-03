@@ -7,7 +7,16 @@
 
 
 int main(int argc, char *argv[]){
-	int opt = getopt(argc, argv," abc");
-	processtheargs(opt);
-	return EXIT_SUCCESS;
+	while (int opt = getopt(argc, argv,"h") != -1){
+	
+		switch(opt){
+			case 'h':
+				printf("h case triggerred");
+				break;
+			default:
+				printf("drfault case triggerred");
+				break;
+
 	}
+	return EXIT_SUCCESS;
+	}}
