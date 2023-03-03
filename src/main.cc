@@ -7,7 +7,8 @@
 
 
 int main(int argc, char *argv[]){
-	while (int opt = getopt(argc, argv,"h") != -1){
+	int opt;
+	while (( opt = getopt(argc, argv,"h")) != -1){
 	
 		switch(opt){
 			case 'h':
