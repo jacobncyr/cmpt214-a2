@@ -31,8 +31,11 @@ int main(int argc, char *argv[]){
 const int CMD_SIZE = 80;
 
 int process(void){
-	char cmd[CMD_SIZE + 1];//add space for the tombstone
-	while(0==feof(stdin)){
-		if(0 != scanf("%s",cmd)){
+	char cmd[CMD_SIZE + 1];//add space for tombstone
+	while(0 == feof(stdin)){
+		if (0 != scanf("%s",cmd)){
 			printf("%s\n",cmd);
-		}}return EXIT_SUCCESS;}
+		}
+	}
+	return EXIT_SUCCESS;
+}
