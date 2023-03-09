@@ -34,8 +34,16 @@ int process(void){
 	char cmd[CMD_SIZE + 1];//add space for tombstone
 	while(0 == feof(stdin)){
 		if (0 != scanf("%s",cmd)){
-			printf("%s\n",cmd);
+			float f = -9999999.99;
+			switch(sscanf(cmd,"%g",&f)){
+					case 1: printf("%g -- number\n", f);
+					break;
+					case 0: printf("%s\n",cmd);
+					break;
+					default: printf("sscanf failed --aborting\n"); // aka eof
+						 return(EXIT_FAILURE);
+						 break;
 		}
-	}
-	return EXIT_SUCCESS;
+	}}return EXIT_SUCCESS;
+	
 }
