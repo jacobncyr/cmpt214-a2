@@ -2,12 +2,13 @@
 #include<cstdio>
 #include"stack.h"
 
+
+const int stack_size = 5;
+int next_index = 0;
+float the_stack[stack_size];
+
+
 int main(void){
-	printf("test");
-	push(2.0);
-	pop();
-	empty();
-	peek();
 	return EXIT_SUCCESS;
 }
 
@@ -21,8 +22,7 @@ float pop(void){
 	return 1.0;
 }
 bool empty(void){
-	printf("empty works");
-	return true;
+	return 0 == next_index;
 }
 float peek(void){
 	printf("peek works");
