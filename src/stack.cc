@@ -8,25 +8,44 @@ int next_index = 0;
 float the_stack[stack_size];
 
 
-int main(void){
+int main(void value){
 	return EXIT_SUCCESS;
+	
 }
 
 bool push(float){
-	printf("push works");
-	return true;;
-}
+	//push a float onto the top of the stack
+	//if the stack is not full
+	//should check though if it is empty first or not add after
+        if(next_index < stack_size){
+		the_stack[next_index++]=value;
+		return true;
+	}else {
+		printf("error: stack is full\n");
+		return false;
+	}}
+
 
 float pop(void){
-	printf("pop works");
-	return 1.0;
+	//pop a value off the top of the stack and return the next
+	//item on the stack
+	if(next_index > 0){
+	   return the_stack[--next_index];
+	}else{
+		//this should really be an assert check
+		printf("error: the stack is empty");
+		return 0.0;
+}
 }
 bool empty(void){
 	return 0 == next_index;
 }
 float peek(void){
-	printf("peek works");
-	return 2.0;
-}
+	if(next_index > 0){
+		return the_stack[next_index -1];
+	}else{
+		printf("error stack is empty");
+		return 0.0;
+	}}
 
 
